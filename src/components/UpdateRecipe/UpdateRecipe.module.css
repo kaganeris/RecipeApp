@@ -1,0 +1,49 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: center;
+}
+
+.div{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.form > input{
+    margin-bottom: 10px;
+    border-radius: 8px;
+    height: 35px;
+}
+
+.form > textarea{
+    margin-bottom: 10px;
+    height: 100px;
+    border-radius: 10px;
+    resize:vertical;
+}
+
+.form > div > button{
+    border-radius: 10px;
+    height: 30px;
+    width: 40%;
+    margin: auto;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.form > div > button:hover{
+    background-color: greenyellow;
+    cursor: pointer;
+    color:black;
+    box-shadow: 0 0 10px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}

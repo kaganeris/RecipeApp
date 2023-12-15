@@ -1,0 +1,56 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin:15px;
+}
+
+.img {
+  width: 100%;
+  border-radius: 8px;
+}
+.h2 {
+  font-size: 24px;
+  margin-top: 12px;
+  color: "#333";
+}
+
+.p{
+    font-size: 16px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnUpdate{
+  background-color: greenyellow;
+  color: black;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 80px;
+}
+
+.btnDelete{
+  background-color: red;
+  color: whitesmoke;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 80px;
+}
+
+.btnUpdate:hover{
+  box-shadow: 0 0 10px;
+  cursor: pointer;
+}
+
+.btnDelete:hover{
+  box-shadow: 0 4px 8px rgba(25, 9, 5, 0.6);
+  cursor: pointer;
+}

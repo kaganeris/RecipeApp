@@ -1,0 +1,48 @@
+.nav{
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.p{
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+.a{
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+.slider-container{
+    width: 50px;
+    height: 25px;
+    background-color: lightgray;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.slider-button{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top:2.5px;
+    left: 2.5px;
+    transition: left 0.3s ease;
+}
+
+.slider-container.dark{
+    background-color: darkgray;
+}
+
+.slider-container.dark .slider-button{
+    left:calc(100% - 22.5px);
+}
+

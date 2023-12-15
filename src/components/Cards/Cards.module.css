@@ -1,0 +1,7 @@
+.div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:start;
+    max-width: 1400px;
+    margin: auto;
+}
