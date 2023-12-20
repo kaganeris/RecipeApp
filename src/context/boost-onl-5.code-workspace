@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../boost-onl-5"
+		},
+		{
+			"path": "../../../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "myNotes"
+	}
+}

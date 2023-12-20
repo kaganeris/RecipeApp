@@ -1,8 +1,10 @@
-import axios from "axios";
 import React, { useState } from "react";
 import styles from "../NewRecieForm/NewRecipeForm.module.css";
+import { useContext } from "react";
+import { ApiContext } from "../../context/ApiContext";
+import UpdateRecipe from "../UpdateRecipe/UpdateRecipe";
 
-const NewRecipeForm = ({ addRecipeToList,isLoading }) => {
+const NewRecipeForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
@@ -11,9 +13,10 @@ const NewRecipeForm = ({ addRecipeToList,isLoading }) => {
   const [descriptionErr, setDescriptionErr] = useState(false);
   const [imageErr, setImageErr] = useState(false);
 
+  const {addRecipeToList,isLoading,editRecipe} = useContext(ApiContext)
   const handleSubmit = (event) => {
     event.preventDefault();
-
+ 
     if (title.trim() && description.trim() && image.trim()) {
       addRecipeToList({ title, description, image });
       setTitle("");
@@ -56,6 +59,8 @@ const NewRecipeForm = ({ addRecipeToList,isLoading }) => {
         {imageErr && <p>Recipe Image cannot be empty!</p>}
         <button type="submit">{isLoading.add ? "Loading" : "Add Recipe"}</button>
       </form>
+      <br/>
+      {editRecipe.id === null ? <span></span> : <UpdateRecipe />} 
     </div>
   );
 };

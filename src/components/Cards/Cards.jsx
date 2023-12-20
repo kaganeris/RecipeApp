@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import Card from "../Card/Card";
 import styles from "../Cards/Cards.module.css"
+import { ApiContext } from "../../context/ApiContext";
 
-const Cards = ({recipes,deleteRecipe,isLoading,handleEditRecipe}) => {
+const Cards = () => {
 
+  const {recipes,deleteRecipe,handleEditRecipe} = useContext(ApiContext)
 
   return (
     <div

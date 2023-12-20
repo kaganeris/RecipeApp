@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "../UpdateRecipe/UpdateRecipe.module.css";
+import { ApiContext } from "../../context/ApiContext";
 
-const UpdateRecipe = ({ editRecipe, cancelEditRecipe, updateRecipe }) => {
+const UpdateRecipe = () => {
   const [editTitle, setEditTitle] = useState("");
   const [editdescription, setEditDescription] = useState("");
   const [editimage, setEditImage] = useState("");
+
+  const {editRecipe,cancelEditRecipe,updateRecipe} = useContext(ApiContext)
+
 
   useEffect(() => {
     setEditTitle(editRecipe.title);

@@ -2,6 +2,8 @@
 import { useContext, useState } from "react";
 import styles from "../Header/Header.module.css";
 import { ThemeContext } from "../../context/ThemeContext.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext.jsx";
 
 const ThemeSlider = () => {
 
@@ -14,7 +16,6 @@ const ThemeSlider = () => {
     toggleTheme()
   };
 
-
   return (
     <div
       onClick={handleToggle}
@@ -26,6 +27,21 @@ const ThemeSlider = () => {
 };
 
 const Header = () => {
+
+  const {isAuthenticated,logout} = useContext(AuthContext)
+
+  const navigate = useNavigate()
+
+
+  const handleLogin = () => {
+    navigate("/login")
+  }
+
+  const handleLogout = () => {
+    logout()
+    navigate("/login")
+  }
+
   return (
     <nav className={styles.nav}>
       <div>
@@ -35,19 +51,22 @@ const Header = () => {
         <tbody>
           <tr>
             <td>
-              <a href="" className={styles.a}>
+              <Link to={"/"} className={styles.a}>
                 Home
-              </a>
+              </Link>
             </td>
             <td>
-              <a href="" className={styles.a}>
+              <Link to={"/add-recipe"} className={styles.a}>
                 Add Recipe
-              </a>
+              </Link>
             </td>
             <td>
-              <a href="" className={styles.a}>
-                About
-              </a>
+              {isAuthenticated ? <Link to={"/profile"} className={styles.a}>
+                Profile
+              </Link> : <span></span>}
+            </td>
+            <td>
+              <button onClick={isAuthenticated ? handleLogout : handleLogin}> {isAuthenticated ? "Logout" : "Login"}</button>
             </td>
             <td>
                 <ThemeSlider/>

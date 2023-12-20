@@ -3,11 +3,13 @@
     flex-direction: column;
     width: 500px;
     justify-content: center;
+    margin: auto;
 }
 
 .div{
-    display: flex;
-    justify-content: center;
+    display: row;
+    justify-content: space-between;
+    align-items: center;
     height: auto;
     margin-bottom: 10px;
 }
